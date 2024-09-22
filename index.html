@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>単価比較アプリ</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .container { max-width: 300px; margin: auto; }
+    input { margin-bottom: 10px; padding: 5px; width: 100%; }
+    button { padding: 5px; width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>単価比較</h2>
+    <label>商品1 価格（円）</label>
+    <input type="number" id="price1" placeholder="価格を入力">
+    
+    <label>商品1 容量</label>
+    <input type="number" id="quantity1" placeholder="容量を入力">
+    
+    <label>商品2 価格（円）</label>
+    <input type="number" id="price2" placeholder="価格を入力">
+    
+    <label>商品2 容量</label>
+    <input type="number" id="quantity2" placeholder="容量を入力">
+    
+    <button onclick="comparePrices()">比較する</button>
+    
+    <p id="result"></p>
+  </div>
+  
+  <script>
+    function comparePrices() {
+      const price1 = parseFloat(document.getElementById('price1').value);
+      const quantity1 = parseFloat(document.getElementById('quantity1').value);
+      const price2 = parseFloat(document.getElementById('price2').value);
+      const quantity2 = parseFloat(document.getElementById('quantity2').value);
+      
+      if (!price1 || !quantity1 || !price2 || !quantity2) {
+        document.getElementById('result').textContent = '全ての項目を入力してください。';
+        return;
+      }
+
+      const unitPrice1 = price1 / quantity1;
+      const unitPrice2 = price2 / quantity2;
+      
+      if (unitPrice1 < unitPrice2) {
+        const difference = (unitPrice2 - unitPrice1).toFixed(2);
+        document.getElementById('result').textContent = `商品1が商品2より${difference}円安いです。`;
+      } else if (unitPrice2 < unitPrice1) {
+        const difference = (unitPrice1 - unitPrice2).toFixed(2);
+        document.getElementById('result').textContent = `商品2が商品1より${difference}円安いです。`;
+      } else {
+        document.getElementById('result').textContent = '両方の商品は同じ単価です。';
+      }
+    }
+  </script>
+</body>
+</html>
