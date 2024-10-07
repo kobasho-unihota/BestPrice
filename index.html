@@ -4,92 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>単価比較アプリ</title>
-  <style>
-    body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      background-color: #f4f7fc; 
-      margin: 0; 
-      padding: 0; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      height: 100vh;
-    }
-
-    .container { 
-      background: #ffffff; 
-      border-radius: 12px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-      padding: 20px; 
-      width: 320px; 
-      text-align: center;
-    }
-
-    h2 {
-      color: #333;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin: 10px 0 5px;
-      color: #555;
-      text-align: left;
-    }
-
-    input { 
-      padding: 10px; 
-      width: calc(100% - 22px); 
-      border: 1px solid #ddd; 
-      border-radius: 8px; 
-      margin-bottom: 15px;
-      box-sizing: border-box;
-    }
-
-    button { 
-      background-color: #007bff; 
-      color: white; 
-      border: none; 
-      padding: 12px; 
-      border-radius: 8px; 
-      cursor: pointer; 
-      font-size: 16px; 
-      width: calc(100% - 22px); 
-      box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-    }
-
-    button:hover { 
-      background-color: #0056b3; 
-      box-shadow: 0 6px 8px rgba(0, 123, 255, 0.3);
-    }
-
-    button:active {
-      background-color: #003a75;
-    }
-
-    p#result {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #333;
-    }
-
-    .highlight {
-      font-weight: bold;
-    }
-
-    .cheaper { 
-      color: #28a745; /* 緑色でお得な商品を強調 */
-    }
-
-    .expensive { 
-      color: #dc3545; /* 赤色でお得でない商品を表示 */
-    }
-
-    .icon {
-      font-size: 20px; /* アイコンを大きく表示 */
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css"> <!-- CSSファイルをリンク -->
 </head>
 <body>
   <div class="container">
@@ -111,46 +26,6 @@
     <p id="result"></p>
   </div>
   
-  <script>
-    function comparePrices() {
-      // 入力値の取得
-      const price1 = parseFloat(document.getElementById('price1').value);
-      const quantity1 = parseFloat(document.getElementById('quantity1').value);
-      const price2 = parseFloat(document.getElementById('price2').value);
-      const quantity2 = parseFloat(document.getElementById('quantity2').value);
-      
-      // 入力が不完全な場合はエラーメッセージを表示
-      if (!price1 || !quantity1 || !price2 || !quantity2) {
-        document.getElementById('result').textContent = '全ての項目を入力してください。';
-        return;
-      }
-
-      // 各商品の単価と1円あたりの量を計算
-      const unitPrice1 = price1 / quantity1;
-      const unitPrice2 = price2 / quantity2;
-      const valuePerYen1 = quantity1 / price1;
-      const valuePerYen2 = quantity2 / price2;
-
-      // 各商品の情報表示
-      let resultText = `商品1の単価は ${unitPrice1.toFixed(2)} 円/単位、1円あたりの量は ${valuePerYen1.toFixed(2)} です。<br>`;
-      resultText += `商品2の単価は ${unitPrice2.toFixed(2)} 円/単位、1円あたりの量は ${valuePerYen2.toFixed(2)} です。<br><br>`;
-
-      // 比較結果を視覚的に強調するための処理
-      if (unitPrice1 < unitPrice2) {
-        const difference = (unitPrice2 - unitPrice1).toFixed(2);
-        resultText += `<span class="cheaper highlight">✅ 商品1が商品2より${difference}円お得です。</span><br>`;
-        resultText += `<span class="expensive">❌ 商品2は商品1より割高です。</span>`;
-      } else if (unitPrice2 < unitPrice1) {
-        const difference = (unitPrice1 - unitPrice2).toFixed(2);
-        resultText += `<span class="cheaper highlight">✅ 商品2が商品1より${difference}円お得です。</span><br>`;
-        resultText += `<span class="expensive">❌ 商品1は商品2より割高です。</span>`;
-      } else {
-        resultText += `<span class="highlight">両方の商品は同じ単価です。</span>`;
-      }
-
-      // 結果をHTMLに反映
-      document.getElementById('result').innerHTML = resultText;
-    }
-  </script>
+  <script src="script.js"></script> <!-- JavaScriptファイルをリンク -->
 </body>
 </html>
