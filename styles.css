@@ -1,7 +1,7 @@
 /* 全体のスタイル設定 */
 body { 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  background: linear-gradient(135deg, #f4f7fc, #dfe9f3); /* 背景にグラデーションを追加 */
+  background: linear-gradient(135deg, #f4f7fc, #dfe9f3); 
   margin: 0; 
   padding: 0; 
   display: flex; 
@@ -12,17 +12,13 @@ body {
 
 .container { 
   background: #ffffff; 
-  border-radius: 20px; /* コーナーを丸くして柔らかい印象に */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影を強調して浮き上がって見える効果 */
+  border-radius: 20px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
   padding: 30px; 
   width: 350px; 
   text-align: center;
-  border-top: 5px solid #007bff; /* 上部にカラーボーダーを追加 */
-  transition: transform 0.3s; /* ホバー時の変化を滑らかに */
-}
-
-.container:hover {
-  transform: translateY(-5px); /* ホバー時に少し上に移動 */
+  border-top: 5px solid #007bff; 
+  transition: transform 0.3s;
 }
 
 h2 {
@@ -32,33 +28,43 @@ h2 {
   font-weight: 600;
 }
 
+.product {
+  background: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 12px; 
+  padding: 20px; 
+  margin-bottom: 15px; 
+  transition: background-color 0.3s; /* 背景色の変更を滑らかに */
+}
+
+.product-cheaper {
+  background-color: #d4edda; /* お得な商品の背景を緑色に */
+}
+
+.product-expensive {
+  background-color: #f8d7da; /* 割高な商品の背景を赤色に */
+}
+
 label {
   display: block;
-  margin: 15px 0 5px;
+  margin: 10px 0 5px;
   color: #555;
   text-align: left;
-  font-weight: 500;
 }
 
 input { 
   padding: 12px; 
   width: calc(100% - 24px); 
   border: 1px solid #ddd; 
-  border-radius: 12px; /* 入力ボックスも丸みを持たせる */
-  margin-bottom: 20px;
+  border-radius: 8px; 
+  margin-bottom: 15px;
   box-sizing: border-box;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 内側に影をつけて立体感を出す */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); 
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input:focus {
-  border-color: #007bff; /* フォーカス時の境界線を青に */
-  outline: none;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* フォーカス時の光彩を追加 */
-}
-
 button { 
-  background: linear-gradient(135deg, #007bff, #0056b3); /* グラデーションボタン */
+  background: linear-gradient(135deg, #007bff, #0056b3); 
   color: white; 
   border: none; 
   padding: 14px; 
@@ -66,18 +72,13 @@ button {
   cursor: pointer; 
   font-size: 18px; 
   width: calc(100% - 24px); 
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3); /* ボタンの影を強調 */
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3); 
   transition: background 0.3s, box-shadow 0.3s;
 }
 
 button:hover { 
   background: linear-gradient(135deg, #0056b3, #003a75); 
-  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4); /* ホバー時に影を濃く */
-}
-
-button:active {
-  background: #003a75;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4); /* 押下時の影 */
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4); 
 }
 
 p#result {
@@ -85,38 +86,4 @@ p#result {
   font-size: 20px;
   color: #333;
   font-weight: 600;
-}
-
-.highlight {
-  font-weight: bold;
-}
-
-.cheaper { 
-  color: #28a745; /* 緑色でお得な商品を強調 */
-}
-
-.expensive { 
-  color: #dc3545; /* 赤色でお得でない商品を表示 */
-}
-
-.icon {
-  font-size: 24px; /* アイコンをさらに大きく表示 */
-}
-
-/* 商品セクションのスタイル */
-.product {
-  border: 1px solid #ddd; 
-  border-radius: 12px; 
-  padding: 20px; 
-  margin-bottom: 15px; 
-  background: #f9f9f9; /* セクションの背景色 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 各商品セクションにも影を追加 */
-}
-
-.product h3 {
-  margin: 0 0 15px; 
-  color: #007bff; /* セクションタイトルの色 */
-  font-size: 22px;
-  border-bottom: 2px solid #ddd; /* 区切り線を追加 */
-  padding-bottom: 10px;
 }
