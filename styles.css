@@ -21,8 +21,8 @@ body {
   transition: background-color 0.3s;
 }
 
-/* コンテナ内の各セクションを区切るブロックスタイル */
-.item-block {
+/* 商品ブロックのスタイル */
+.product {
   border: 1px solid #e0e0e0; /* 枠線を追加 */
   padding: 20px;
   border-radius: 8px;
@@ -35,6 +35,13 @@ h2 {
   color: #333;
   font-size: 24px;
   margin-bottom: 20px;
+}
+
+/* 各商品のタイトルスタイル */
+h3 {
+  color: #555;
+  margin: 0;
+  font-size: 20px;
 }
 
 /* ラベルのスタイル */
@@ -106,13 +113,13 @@ p#result {
 }
 
 /* お得な商品のブロック全体を強調するスタイル */
-.cheaper-block {
+.product-cheaper {
   background-color: #e6ffe6; /* 薄い緑色で背景を変更 */
   box-shadow: 0 0 8px rgba(40, 167, 69, 0.5); /* 緑色の影を追加 */
 }
 
 /* お得でない商品のブロック全体を強調するスタイル */
-.expensive-block {
+.product-expensive {
   background-color: #ffe6e6; /* 薄い赤色で背景を変更 */
   box-shadow: 0 0 8px rgba(220, 53, 69, 0.5); /* 赤色の影を追加 */
 }
