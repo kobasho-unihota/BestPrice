@@ -1,7 +1,7 @@
 /* body の基本スタイル設定 */
 body { 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  background-color: #f4f7fc; 
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); /* 背景グラデーション */
   margin: 0; 
   padding: 0; 
   display: flex; 
@@ -14,34 +14,50 @@ body {
 .container { 
   background: #ffffff; 
   border-radius: 12px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影を濃くして立体感を出す */
   padding: 20px; 
-  width: 340px; /* ブロックの幅を調整 */
+  width: 340px; 
   text-align: center;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-top: 6px solid #6aafe6; /* コンテナ上部にアクセントカラーを追加 */
 }
 
-/* 商品ブロックのスタイル */
+/* 各商品のブロックスタイル */
 .product {
-  border: 1px solid #e0e0e0; /* 枠線を追加 */
+  background: #f9f9f9; /* 背景色を優しいトーンに */
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   padding: 20px;
-  border-radius: 8px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* お得な商品のスタイル */
+.product-cheaper {
+  background: #e6ffe6; /* お得な商品は緑系の背景色 */
+  box-shadow: 0 8px 16px rgba(40, 167, 69, 0.3); /* 緑色の影を追加 */
+}
+
+/* お得でない商品のスタイル */
+.product-expensive {
+  background: #ffe6e6; /* お得でない商品は赤系の背景色 */
+  box-shadow: 0 8px 16px rgba(220, 53, 69, 0.3); /* 赤色の影を追加 */
 }
 
 /* タイトルのスタイル */
 h2 {
-  color: #333;
-  font-size: 24px;
+  color: #6aafe6; /* タイトルカラーをアクセントに合わせる */
+  font-size: 28px;
   margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 文字の影で立体感を追加 */
 }
 
-/* 各商品のタイトルスタイル */
+/* 商品タイトルのスタイル */
 h3 {
   color: #555;
-  margin: 0;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 /* ラベルのスタイル */
@@ -50,7 +66,7 @@ label {
   margin: 10px 0 5px;
   color: #555;
   text-align: left;
-  font-size: 16px; /* ラベルのフォントサイズを16pxに設定 */
+  font-size: 16px;
 }
 
 /* 各入力フィールドのスタイル */
@@ -61,14 +77,14 @@ input {
   border-radius: 8px; 
   margin-bottom: 15px;
   box-sizing: border-box;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s, box-shadow 0.3s;
-  font-size: 16px; /* フォントサイズを16pxに設定してズームを防止 */
+  font-size: 16px;
 }
 
 /* ボタンのスタイル */
 button { 
-  background-color: #007bff; 
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); /* グラデーションを追加 */
   color: white; 
   border: none; 
   padding: 12px; 
@@ -76,17 +92,17 @@ button {
   cursor: pointer; 
   font-size: 16px; 
   width: calc(100% - 24px); 
-  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3); /* 影を濃くして立体感を追加 */
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 button:hover { 
-  background-color: #0056b3; 
-  box-shadow: 0 6px 8px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(135deg, #0056b3 0%, #003a75 100%); 
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.4);
 }
 
 button:active {
-  background-color: #003a75;
+  background: linear-gradient(135deg, #003a75 0%, #001f48 100%);
 }
 
 /* 結果表示用の段落スタイル */
@@ -102,29 +118,7 @@ p#result {
   font-weight: bold;
 }
 
-/* お得な商品を強調するスタイル */
-.cheaper { 
-  color: #28a745; /* 緑色でお得な商品を強調 */
-}
-
-/* お得でない商品を表示するスタイル */
-.expensive { 
-  color: #dc3545; /* 赤色でお得でない商品を表示 */
-}
-
-/* お得な商品のブロック全体を強調するスタイル */
-.product-cheaper {
-  background-color: #e6ffe6; /* 薄い緑色で背景を変更 */
-  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5); /* 緑色の影を追加 */
-}
-
-/* お得でない商品のブロック全体を強調するスタイル */
-.product-expensive {
-  background-color: #ffe6e6; /* 薄い赤色で背景を変更 */
-  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5); /* 赤色の影を追加 */
-}
-
 /* アイコンスタイル */
 .icon {
-  font-size: 20px; /* アイコンを大きく表示 */
+  font-size: 20px;
 }
