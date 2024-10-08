@@ -1,6 +1,7 @@
+/* 全体のスタイル設定 */
 body { 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  background-color: #f4f7fc; 
+  background: linear-gradient(135deg, #f4f7fc, #dfe9f3); /* 背景にグラデーションを追加 */
   margin: 0; 
   padding: 0; 
   display: flex; 
@@ -11,68 +12,79 @@ body {
 
 .container { 
   background: #ffffff; 
-  border-radius: 12px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  padding: 20px; 
-  width: 320px; 
+  border-radius: 20px; /* コーナーを丸くして柔らかい印象に */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影を強調して浮き上がって見える効果 */
+  padding: 30px; 
+  width: 350px; 
   text-align: center;
+  border-top: 5px solid #007bff; /* 上部にカラーボーダーを追加 */
+  transition: transform 0.3s; /* ホバー時の変化を滑らかに */
+}
+
+.container:hover {
+  transform: translateY(-5px); /* ホバー時に少し上に移動 */
 }
 
 h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
+  color: #007bff;
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
 label {
   display: block;
-  margin: 10px 0 5px;
+  margin: 15px 0 5px;
   color: #555;
   text-align: left;
+  font-weight: 500;
 }
 
 input { 
-  padding: 10px; 
-  width: calc(100% - 22px); 
+  padding: 12px; 
+  width: calc(100% - 24px); 
   border: 1px solid #ddd; 
-  border-radius: 8px; 
-  margin-bottom: 15px;
+  border-radius: 12px; /* 入力ボックスも丸みを持たせる */
+  margin-bottom: 20px;
   box-sizing: border-box;
-  transition: border-color 0.3s; /* 境界線の変化を滑らかに */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 内側に影をつけて立体感を出す */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
-  border-color: #007bff; /* フォーカス時の境界線の色 */
-  outline: none; /* デフォルトのアウトラインを削除 */
+  border-color: #007bff; /* フォーカス時の境界線を青に */
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* フォーカス時の光彩を追加 */
 }
 
 button { 
-  background-color: #007bff; 
+  background: linear-gradient(135deg, #007bff, #0056b3); /* グラデーションボタン */
   color: white; 
   border: none; 
-  padding: 12px; 
-  border-radius: 8px; 
+  padding: 14px; 
+  border-radius: 12px; 
   cursor: pointer; 
-  font-size: 16px; 
-  width: calc(100% - 22px); 
-  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-  transition: background-color 0.3s, box-shadow 0.3s; /* ボタンの変化を滑らかに */
+  font-size: 18px; 
+  width: calc(100% - 24px); 
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3); /* ボタンの影を強調 */
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 button:hover { 
-  background-color: #0056b3; 
-  box-shadow: 0 6px 8px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(135deg, #0056b3, #003a75); 
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4); /* ホバー時に影を濃く */
 }
 
 button:active {
-  background-color: #003a75;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); /* 押下時の影 */
+  background: #003a75;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4); /* 押下時の影 */
 }
 
 p#result {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 25px;
+  font-size: 20px;
   color: #333;
+  font-weight: 600;
 }
 
 .highlight {
@@ -88,19 +100,23 @@ p#result {
 }
 
 .icon {
-  font-size: 20px; /* アイコンを大きく表示 */
+  font-size: 24px; /* アイコンをさらに大きく表示 */
 }
 
 /* 商品セクションのスタイル */
 .product {
   border: 1px solid #ddd; 
-  border-radius: 8px; 
-  padding: 15px; 
+  border-radius: 12px; 
+  padding: 20px; 
   margin-bottom: 15px; 
   background: #f9f9f9; /* セクションの背景色 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 各商品セクションにも影を追加 */
 }
 
 .product h3 {
-  margin: 0 0 10px; 
-  color: #333;
+  margin: 0 0 15px; 
+  color: #007bff; /* セクションタイトルの色 */
+  font-size: 22px;
+  border-bottom: 2px solid #ddd; /* 区切り線を追加 */
+  padding-bottom: 10px;
 }
