@@ -2,37 +2,37 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- ズームを無効化 -->
   <title>単価比較アプリ</title>
-  <link rel="stylesheet" href="styles.css"> <!-- 外部CSSのリンク -->
+  <link rel="stylesheet" href="style.css"> <!-- CSSを外部ファイルとしてリンク -->
 </head>
 <body>
   <div class="container">
     <h2>単価比較</h2>
-
-    <!-- 商品1のセクション -->
-    <div id="product1" class="product">
+    
+    <div class="product" id="product1">
       <h3>商品1</h3>
       <label>価格（円）</label>
-      <input type="number" id="price1" placeholder="価格を入力">
+      <input type="number" id="price1" placeholder="価格を入力" pattern="\d*" inputmode="numeric">
+      
       <label>容量</label>
-      <input type="number" id="quantity1" placeholder="容量を入力">
+      <input type="number" id="quantity1" placeholder="容量を入力" pattern="\d*" inputmode="numeric">
     </div>
 
-    <!-- 商品2のセクション -->
-    <div id="product2" class="product">
+    <div class="product" id="product2">
       <h3>商品2</h3>
       <label>価格（円）</label>
-      <input type="number" id="price2" placeholder="価格を入力">
+      <input type="number" id="price2" placeholder="価格を入力" pattern="\d*" inputmode="numeric">
+      
       <label>容量</label>
-      <input type="number" id="quantity2" placeholder="容量を入力">
+      <input type="number" id="quantity2" placeholder="容量を入力" pattern="\d*" inputmode="numeric">
     </div>
-
+    
     <button onclick="comparePrices()">比較する</button>
     
     <p id="result"></p>
   </div>
 
-  <script src="script.js"></script> <!-- 外部JavaScriptのリンク -->
+  <script src="script.js"></script> <!-- JavaScriptを外部ファイルとしてリンク -->
 </body>
 </html>
